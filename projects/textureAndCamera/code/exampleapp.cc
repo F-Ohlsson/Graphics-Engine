@@ -87,12 +87,8 @@ ExampleApp::Open()
 
 		//Start preparing cube resources
 		this->textR = TextureResource();
-
-		textR.LoadTexture("../resources/textures/BIGLEAVES.png", true);
+		textR.LoadTexture("../../../resources/textures/STRIPES.png", true);
 		textR.BindTexture(textR.texture);
-
-		int test = 32;
-		int too = test + 5;
 
 		this->meshR = MeshResource();
 

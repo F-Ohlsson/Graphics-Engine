@@ -43,6 +43,5 @@ void TextureResource::LoadTexture(const char* name, bool rgba) {
 
 void TextureResource::BindTexture(GLuint data) {
 	glBindTexture(GL_TEXTURE_2D, data);
-
 	return;
 }

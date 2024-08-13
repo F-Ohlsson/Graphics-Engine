@@ -66,7 +66,7 @@ ExampleApp::Open()
 		graphN.shadR = std::make_shared<ShaderResource>();
 
 		//Start preparing cube resources
-		graphN.textR->LoadTexture("../resources/textures/BIGLEAVES.png", true);
+		graphN.textR->LoadTexture("../resources/textures/STRIPES.png", true);
 		graphN.textR->BindTexture(graphN.textR->texture);
 		graphN.meshR->SetupCube(0.5, 0.5, 0.5);
 
@@ -79,7 +79,7 @@ ExampleApp::Open()
 		
 		graphN.shadR->shaderProgram = std::make_shared<GLuint>(graphN.shadR->CreateProgram(graphN.shadR->vertexShader, graphN.shadR->fragmentShader));
 
-		return true;
+ 		return true;
 	}
 	return false;
 }
@@ -109,11 +109,11 @@ ExampleApp::Run()
 	camera.projection = camera.ProjectionMatrix(1.0f, 0.1f, 50.0f);
 
 	//Set Up Second Cube just to show it doesn't need reloading mesh/texture/shader
-	GraphicsNode secondNode = GraphicsNode();
-	secondNode.position = { 1,0,-1};
-	secondNode.meshR = graphN.meshR;
-	secondNode.textR = graphN.textR;
-	secondNode.shadR = graphN.shadR;
+	//GraphicsNode secondNode = GraphicsNode();
+	//secondNode.meshR = graphN.meshR;
+	//secondNode.textR = graphN.textR;
+	//secondNode.shadR = graphN.shadR;
+	//secondNode.position = { 1,0,-1};
 
 	while (this->window->IsOpen())
 	{
@@ -126,7 +126,7 @@ ExampleApp::Run()
 		mat4 vp = camera.projection * camera.view;
 
 		graphN.DrawQuads(vp);
-		secondNode.DrawQuads(vp);
+		//secondNode.DrawQuads(vp);
 		//Only viewprojection to grid
 		grid.Draw(&vp[0][0]);
 		

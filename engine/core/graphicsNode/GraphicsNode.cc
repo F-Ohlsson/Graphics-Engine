@@ -35,14 +35,10 @@ GraphicsNode& GraphicsNode::operator=(GraphicsNode&& rhs) noexcept {
 
 
 void GraphicsNode::DrawQuads(mat4 viewProjection) {
-	//Cycle through meshes
-	for (int i = 0; i < this->meshVector.size(); i++) {
-		MeshResource* currentMesh = this->meshVector[i].get();
-
 		//Cycle through primitives
-		for (int j = 0; j < currentMesh->primitiveVector.size(); j++) {
-			primitive currentPrim = currentMesh->primitiveVector[j];
-			currentMesh->BindBuffer(currentPrim.vertBuffer);
+		for (int j = 0; j < this->meshR->primitiveVector.size(); j++) {
+			primitive currentPrim = this->meshR->primitiveVector[j];
+			this->meshR->BindBuffer(currentPrim.vertBuffer);
 			this->textR->BindTexture(this->textR->texture);
 
 			//Prepare model matrix
@@ -66,11 +62,9 @@ void GraphicsNode::DrawQuads(mat4 viewProjection) {
 			this->meshR->BindBuffer(0);
 			this->textR->BindTexture(0);
 			this->shadR->UseProgram(0);
+
 		}
 
-
-	}
-	
 }
 
 void GraphicsNode::DrawTrisDeferred(mat4 view, mat4 projection, float scaling, std::shared_ptr<GLuint> geometryShaderProgram) {

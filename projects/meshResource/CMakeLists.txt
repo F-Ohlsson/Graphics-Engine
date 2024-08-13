@@ -1,14 +1,14 @@
 #--------------------------------------------------------------------------
-# meshResource project
+# MeshResource project
 #--------------------------------------------------------------------------
 
-PROJECT(meshResource)
-FILE(GLOB example_headers code/*.h)
-FILE(GLOB example_sources code/*.cc)
+PROJECT(MeshResource)
+FILE(GLOB meshResource_headers code/*.h)
+FILE(GLOB meshResource_sources code/*.cc)
 
-SET(files_example ${example_headers} ${example_sources})
-SOURCE_GROUP("example" FILES ${files_example})
+SET(files_meshResource ${meshResource_headers} ${meshResource_sources})
+SOURCE_GROUP("meshResource" FILES ${files_meshResource})
 
-ADD_EXECUTABLE(meshResource ${files_example})
-TARGET_LINK_LIBRARIES(meshResource core render)
-ADD_DEPENDENCIES(meshResource core render)
+ADD_EXECUTABLE(MeshResource ${files_meshResource})
+TARGET_LINK_LIBRARIES(MeshResource core render)
+ADD_DEPENDENCIES(MeshResource core render)

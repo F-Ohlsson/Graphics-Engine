@@ -1,0 +1,2 @@
+gltf's from: https://github.com/KhronosGroup/glTF-Sample-Models/tree/main/2.0
+teapot.obj from https://graphics.stanford.edu/courses/cs148-10-summer/as3/code/as3/teapot.obj, re-exported with vertex normals using Blender

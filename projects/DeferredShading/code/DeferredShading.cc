@@ -48,12 +48,6 @@ ExampleApp::Open()
 			this->window->Close();		
 		inputHandler.CheckKeyboardInput(key, action);
 	});
-	window->SetMousePressFunction([this](int32 button, int32 action, int32 mods) {
-		inputHandler.CheckMouseInput(button, action);
-	});
-	window->SetMouseMoveFunction([this](float64 x, float64 y) {
-		inputHandler.CheckMouseMovement(x, y);
-	});
 
 	if (this->window->Open())
 	{
@@ -131,13 +125,6 @@ ExampleApp::Open()
 		
 		//GLTF files
 		graphN.LoadGLTF("../resources/gltf/Cube/Cube.gltf"); scaling = 0.3f; normalShader = false; //Must load something here for materials to work, I don't quite know why but at this point I don't care to solve it
-		//graphN.LoadGLTF("../resources/gltf/Avocado/Avocado.gltf"); scaling = 15.0f; normalShader = true;
-		//graphN.LoadGLTF("../resources/gltf/DamagedHelmet/DamagedHelmet.gltf"); graphN.scaling = 0.5f; normalShader = true;
-		//scaling = 0.5f;
-		//graphN.LoadGLTF("../resources/gltf/FlightHelmet/FlightHelmet.gltf"); scaling = 2.0f;
-		//graphN.LoadGLTF("../resources/gltf/NormalTangentMirrorTest/NormalTangentMirrorTest.gltf"); scaling = 0.5f;
-
-
 
 		//Setting up shaders
 		std::string vertexShaderString;
